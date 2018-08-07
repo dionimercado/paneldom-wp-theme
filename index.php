@@ -1,44 +1,19 @@
-<!doctype html>
-<html <?php language_attributes() ?>>
-  <head>
-    <meta charset="<?php bloginfo('charset') ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php wp_head() ?>
-  </head>
-  <body <?php body_class() ?>>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Container</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExample07">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          </form>
-        </div>
+<?php get_header() ?>
+<section class="section-slider">
+  <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
+</section>
+<section class="section-about my-5 py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about.jpg" alt="<?php bloginfo('name') ?>">
       </div>
-    </nav>
-    <?php wp_footer() ?>
-  </body>
-</html>
+      <div class="col-md-6">
+        <h2>Bienvenidos a Paneldom</h2>
+        <p>Los sistemas modernos de construcción son asociados a tecnologías innovadoras y a los nuevos materiales, sistemas livianos que ofrecen la posibilidad de una mayor rapidez de ejecución por montaje.</p>
+        <p>Estas características influyen en gran medida en el aprovechamiento de los materiales y de la mano de obra, ya que la planificación se hace más sencilla, pudiendo cumplir las metas fijadas en cuanto a los recursos económicos y de tiempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<?php get_footer() ?>

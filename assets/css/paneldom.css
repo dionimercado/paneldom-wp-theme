@@ -1,2 +1,29 @@
 body {
   background-color: #fff; }
+
+.headerNav {
+  border-top: 4px solid #41ae38;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 99; }
+  .headerNav .navbar-nav .nav-link {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase; }
+  .headerNav .navbar-nav .active > .nav-link {
+    color: #41ae38; }
+
+.section-slider {
+  background: url("../images/hero.svg"); }
+
+.footer {
+  background-color: #41ae38;
+  color: #fff;
+  line-height: 5rem; }
+  .footer a {
+    color: rgba(255, 255, 255, 0.5); }
+  .footer p {
+    margin-bottom: 0; }
+
+@media screen and (max-width: 768px) {
+  .headerNav .navbar-brand img {
+    height: 50px; } }

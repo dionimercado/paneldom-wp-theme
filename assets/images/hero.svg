@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2800 938">
+  <defs>
+    <style>
+      .cls-1,
+      .cls-23 {
+        fill: none
+      }
+
+      .cls-21 {
+        opacity: .2;
+        mix-blend-mode: multiply
+      }
+
+      .cls-22 {
+        fill: #0056ff
+      }
+
+      .cls-23 {
+        stroke: #fff
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1400.1" y1="3.49" x2="1400.1" y2="933.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2776fb" />
+      <stop offset="1" stop-color="#2e4be0" />
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="SVGID" class="cls-1" d="M0 0h2800v938H0z" />
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path d="M0 886.5q700 35.08 1400 35.08t1400-35.08V939H0z" clip-rule="evenodd" fill="none" />
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path class="cls-1" d="M0 886.5h2800V939H0z" />
+    </clipPath>
+  </defs>
+  <g style="isolation:isolate">
+    <path fill="url(#linear-gradient)" d="M0 0h2800.2v938H0z" id="bg" />
+    <g clip-path="url(#clip-path-2)" id="top">
+      <g clip-path="url(#clip-path-3)">
+        <path fill="#fff" d="M-8.75 877.75h2817.5v70H-8.75z" />
+      </g>
+    </g>
+  </g>
+</svg>

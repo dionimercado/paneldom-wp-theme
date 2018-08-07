@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node-sass sass/main.scss assets/css/paneldom.css"
+    "compile:sass": "node-sass sass/main.scss assets/css/paneldom.css --watch"
   },
   "dependencies": {
     "node-sass": "^4.9.2"

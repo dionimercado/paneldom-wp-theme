@@ -16,4 +16,11 @@
     </div>
   </div>
 </section>
+
+<section class="ig-feed">
+  <div class="container">
+    <?php echo do_shortcode('[elfsight_instagram_feed id="1"]') ?>
+  </div>
+</section>
+
 <?php get_footer() ?>

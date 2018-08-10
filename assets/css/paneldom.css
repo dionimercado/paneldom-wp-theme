@@ -6,6 +6,8 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 99; }
+  .headerNav .navbar-brand img {
+    padding: 0.2rem 0; }
   .headerNav .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase; }
@@ -18,12 +20,32 @@ body {
 .footer {
   background-color: #41ae38;
   color: #fff;
-  line-height: 5rem; }
+  line-height: 5rem;
+  font-size: 0.8rem; }
   .footer a {
     color: rgba(255, 255, 255, 0.5); }
   .footer p {
     margin-bottom: 0; }
+  .footer .social-icons span {
+    margin-right: 1rem; }
+  .footer .social-icons a {
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    height: 2.4rem;
+    width: 2.4rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    line-height: 2.4rem;
+    text-align: center;
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+    transition: all .3s ease; }
+    .footer .social-icons a:hover {
+      background-color: #fff;
+      color: #41ae38;
+      border-color: #fff; }
 
 @media screen and (max-width: 768px) {
   .headerNav .navbar-brand img {
-    height: 50px; } }
+    height: 50px;
+    padding: 0; } }

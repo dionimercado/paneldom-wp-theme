@@ -1,4 +1,5 @@
 <?php
+show_admin_bar(false);
 
 // Set content width value based on the theme's design
 if ( ! isset( $content_width ) )
@@ -16,6 +17,9 @@ function paneldom_theme_setup()  {
 	// Add theme support for document Title tag
 	add_theme_support( 'title-tag' );
 
+	// Add theme support for Woocommerce
+	add_theme_support( 'woocommerce' );
+
   // Add support for two custom navigation menus.
   register_nav_menus( array(
       'primary'   => __( 'Primary Menu', 'paneldom' ),
@@ -29,13 +33,21 @@ function paneldom_scripts() {
 
 	wp_enqueue_style( 'paneldom', get_template_directory_uri() . '/assets/css/paneldom.css', array( 'bootstrap' ), uniqid() );
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', false, '4.1.3' );
-  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Oswald:400,600', array(), null, 'all' );
-  wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', array(), null, 'all' );
+  wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Oswald:400,600|Roboto:300,400,700', array(), null, 'all' );
+  wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', array(), '5.2.0', 'all' );
+  // wp_enqueue_style( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css', array(), '3.3.5', 'all' );
 
+	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), '2.3.4', 'all' );
+  wp_enqueue_style( 'owl-carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css', array(), '2.3.4', 'all' );
 
+	// wp_deregister_script('jquery');
+  // wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), '3.2.1', false );
   wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array( 'jquery'), '1.14.3', true );
   wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array( 'popper' ), '4.1.3', true );
+  // wp_enqueue_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', array( 'jquery' ), '3.3.5', true );
 
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array ( 'jquery' ), '2.3.4', true);
+	wp_enqueue_script( 'paneldom', get_template_directory_uri() . '/assets/js/paneldom.js', array ( 'jquery' ), uniqid(), true);
 
 
 }

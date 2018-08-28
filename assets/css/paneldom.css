@@ -37,7 +37,7 @@ h2 {
     .page-header h1::before {
       content: "";
       display: block;
-      transform: skew(45deg);
+      transform: skew(35deg);
       background-color: #41ae38;
       position: absolute;
       right: -2.3rem;
@@ -48,7 +48,7 @@ h2 {
   .page-header.right-skew {
     text-align: right; }
     .page-header.right-skew h1::before {
-      transform: skew(-45deg);
+      transform: skew(-35deg);
       right: unset;
       left: -2.3rem; }
 
@@ -56,14 +56,24 @@ h2 {
   border-top: 4px solid #41ae38;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   position: relative;
-  z-index: 99; }
-  .headerNav .navbar-brand img {
-    padding: 0.2rem 0; }
+  z-index: 99;
+  padding: 0; }
+  .headerNav .navbar-brand {
+    height: 6rem; }
+    .headerNav .navbar-brand img {
+      height: 100%;
+      width: auto;
+      padding: 0.5rem 0; }
   .headerNav .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    color: #717175;
+    line-height: 7rem; }
   .headerNav .navbar-nav .active > .nav-link {
-    color: #41ae38; }
+    background-color: #41ae38;
+    color: #fff; }
 
 .section-slider {
   background: url("../images/hero.svg"); }
@@ -130,39 +140,37 @@ h2 {
 
 .section-portfolio {
   padding: 4rem 0; }
-
-.portfolio-carousel .portfolio-item {
-  overflow: hidden; }
-  .portfolio-carousel .portfolio-item figure {
-    position: relative; }
-    .portfolio-carousel .portfolio-item figure figcaption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 9;
-      width: 100%;
-      padding: 1rem;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300; }
-      .portfolio-carousel .portfolio-item figure figcaption a {
-        color: #fff; }
-
-.portfolio-carousel.owl-theme .owl-dots {
-  position: absolute;
-  top: -5.5rem;
-  left: 0;
-  width: 100%;
-  margin-top: 0 !important;
-  text-align: right; }
-  .portfolio-carousel.owl-theme .owl-dots .owl-dot {
-    cursor: pointer; }
-    .portfolio-carousel.owl-theme .owl-dots .owl-dot span {
-      width: 1rem;
-      height: 1rem;
-      border: 0;
-      border-radius: 0; }
-    .portfolio-carousel.owl-theme .owl-dots .owl-dot.active span {
-      background: #41ae38; }
+  .section-portfolio .portfolio-item {
+    overflow: hidden; }
+    .section-portfolio .portfolio-item figure {
+      position: relative; }
+      .section-portfolio .portfolio-item figure figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        padding: 1rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300; }
+        .section-portfolio .portfolio-item figure figcaption a {
+          color: #fff; }
+  .section-portfolio .portfolio-carousel.owl-theme .owl-dots {
+    position: absolute;
+    top: -5.5rem;
+    left: 0;
+    width: 100%;
+    margin-top: 0 !important;
+    text-align: right; }
+    .section-portfolio .portfolio-carousel.owl-theme .owl-dots .owl-dot {
+      cursor: pointer; }
+      .section-portfolio .portfolio-carousel.owl-theme .owl-dots .owl-dot span {
+        width: 1rem;
+        height: 1rem;
+        border: 0;
+        border-radius: 0; }
+      .section-portfolio .portfolio-carousel.owl-theme .owl-dots .owl-dot.active span {
+        background: #41ae38; }
 
 .overlay {
   opacity: 1;
@@ -360,11 +368,11 @@ h2 {
         position: absolute;
         z-index: 0;
         opacity: 0.2;
-        font-size: 6rem;
+        font-size: 3rem;
         top: 50%;
         right: 6%;
-        margin-top: -5rem;
-        border: 0.3rem solid #fff;
+        margin-top: -4rem;
+        border: 0.2rem solid #fff;
         color: #fff;
         border-radius: 50%;
         padding: 2rem;
@@ -373,6 +381,23 @@ h2 {
         opacity: 1; }
       .contact-info ul li strong {
         display: block; }
+
+.modal-header .close {
+  padding: 0;
+  margin: -3rem -3rem 0rem auto;
+  background-color: green;
+  opacity: 1;
+  color: #ddd;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.5rem;
+  font-weight: 300; }
+
+.woocommerce-ordering,
+.woocommerce-result-count,
+.button.product_type_simple {
+  display: none; }
 
 .gform_wrapper .top_label .gfield_label,
 .gform_wrapper .ginput_complex label {

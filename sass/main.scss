@@ -45,7 +45,7 @@ h2 {
     &::before {
     content: "";
       display: block;
-      transform: skew(45deg);
+      transform: skew(35deg);
       background-color: $primary-color;
       position: absolute;
       right: -2.3rem;
@@ -59,7 +59,7 @@ h2 {
     text-align: right;
     h1 {
       &::before {
-        transform: skew(-45deg);
+        transform: skew(-35deg);
         right: unset;
         left: -2.3rem;
 
@@ -73,18 +73,30 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,.15);
   position: relative;
   z-index: 99;
+  padding: 0;
 
-  .navbar-brand img {
-    padding: 0.2rem 0;
+  .navbar-brand {
+    height: 6rem;
+    & img {
+      height: 100%;
+      width: auto;
+      padding: 0.5rem 0;
+    }
   }
 
   .navbar-nav {
     .nav-link {
       font-family: 'Oswald', sans-serif;
       text-transform: uppercase;
+      font-size: 1.6rem;
+      padding: 0 1rem;
+      color: rgba(113,113,117,1);
+      line-height: 7rem;
     }
+
     .active>.nav-link {
-      color: $primary-color;
+      background-color: $primary-color;
+      color: #fff;
     }
   }
 }
@@ -178,15 +190,14 @@ h2 {
 
 .section-portfolio {
   padding: 4rem 0;
-}
-.portfolio-carousel {
+
   .portfolio-item {
     overflow: hidden;
 
-    figure {
+    & figure {
       position: relative;
 
-      figcaption {
+      & figcaption {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -203,28 +214,34 @@ h2 {
     }
   }
 
-  &.owl-theme .owl-dots {
-    position: absolute;
-    top: -5.5rem;
-    left: 0;
-    width: 100%;
-    margin-top: 0 !important;
-    text-align: right;
+  & .portfolio-carousel {
 
-    .owl-dot {
-      cursor: pointer;
-      span{
-       width: 1rem;
-       height: 1rem;
-       border: 0;
-       border-radius: 0;
-     }
-     &.active span {
-       background: $primary-color;
-     }
+    &.owl-theme .owl-dots {
+      position: absolute;
+      top: -5.5rem;
+      left: 0;
+      width: 100%;
+      margin-top: 0 !important;
+      text-align: right;
+
+      & .owl-dot {
+        cursor: pointer;
+        span{
+         width: 1rem;
+         height: 1rem;
+         border: 0;
+         border-radius: 0;
+       }
+
+       &.active span {
+         background: $primary-color;
+       }
+      }
     }
   }
+
 }
+
 
 
 .overlay {
@@ -534,11 +551,11 @@ h2 {
         position: absolute;
         z-index: 0;
         opacity: 0.2;
-        font-size: 6rem;
+        font-size: 3rem;
         top: 50%;
         right: 6%;
-        margin-top: -5rem;
-        border: 0.3rem solid #fff;
+        margin-top: -4rem;
+        border: 0.2rem solid #fff;
         color: #fff;
         border-radius: 50%;
         padding: 2rem;
@@ -555,6 +572,26 @@ h2 {
       }
     }
   }
+}
+
+.modal-header .close {
+  padding: 0;
+  margin: -3rem -3rem 0rem auto;
+  background-color: green;
+  opacity: 1;
+  color: #ddd;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.woocommerce-ordering,
+.woocommerce-result-count,
+.button.product_type_simple {
+  display: none;
 }
 
 .gform_wrapper .top_label .gfield_label,

@@ -1,17 +1,140 @@
-<?php get_header() ?>
+<?php
+
+/* Template Name: Home */
+get_header();
+
+?>
 <section class="section-slider">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
 </section>
-<section class="section-about my-5 py-5">
+<section class="section-about">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about.jpg" alt="<?php bloginfo('name') ?>">
+      <div class="col-md-4">
+        <div class="welcome-box text-dark">
+          <h2>Paneldom</h2>
+          <p>Somos una empresa a la vanguardia de la tecnologia, implementando nuevas técnicas y productos de construccion para que las estructuras sean mas ligeras y estructuralmente presenten un mejor comportamiento y al mismo tiempo sean más econcónomicas.</p>
+          <p>La inminente llegada de nuevos procesos constructivos debido a la necesidad de reducir los costos y aumentar la calidad de las obras ha originado el nacimiento de la compañía PANELDOM.</p>
+        </div>
       </div>
-      <div class="col-md-6">
-        <h2>Bienvenidos a Paneldom</h2>
-        <p>Los sistemas modernos de construcción son asociados a tecnologías innovadoras y a los nuevos materiales, sistemas livianos que ofrecen la posibilidad de una mayor rapidez de ejecución por montaje.</p>
-        <p>Estas características influyen en gran medida en el aprovechamiento de los materiales y de la mano de obra, ya que la planificación se hace más sencilla, pudiendo cumplir las metas fijadas en cuanto a los recursos económicos y de tiempo.</p>
+      <div class="col-md-8">
+        <div class="row d-none">
+          <div class="col-md-6">
+            <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about.jpg" alt="<?php bloginfo('name') ?>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <?php if( have_rows('highlights') ): ?>
+
+            <div class="highlights-carousel owl-carousel owl-theme">
+              <?php while( have_rows('highlights') ): the_row();
+
+            		// vars
+            		$image = get_sub_field('image');
+            		$title = get_sub_field('title');
+            		$content = get_sub_field('description');
+
+            		?>
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="highlight-text p-5 arrow">
+                        <h3><?php echo $title; ?></h3>
+                        <p><?php echo $content; ?></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="grid h-100 bg-white d-flex my-auto">
+                        <figure class="effect-cheff">
+                          <img class="img-fluid" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php endwhile ?>
+            </div>
+          <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-portfolio">
+  <div class="container">
+    <div class="page-header left-skew">
+      <h1><?php _e('Trabajos Recientes') ?></h1>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="carousel" class="portfolio-carousel owl-carousel owl-theme">
+          <?php
+          $portfolio = new WP_Query(array('post_type' => 'portfolio'));
+          while($portfolio->have_posts()) : $portfolio->the_post();
+          $img_src = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' );
+                // $img_srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id($post->ID), 'full' );
+          ?>
+            <div class="item">
+              <div class="portfolio-item">
+                <?php if( has_post_thumbnail() ) : ?>
+                  <figure>
+                    <a href="<?php the_permalink() ?>" class="overlay"></a>
+                    <img class="img-fluid" src="<?php echo esc_url( $img_src ); ?>&amp;resize=300,200" alt="<?php the_title() ?>">
+                    <figcaption>
+                      <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                    </figcaption>
+                  </figure>
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endwhile; wp_reset_postdata() ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials bg-light border-top text-center">
+  <header class="block-header">
+    <h2><?php _e( 'Testimonials' ) ?></h2>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="owl-testimonials owl-carousel owl-theme">
+          <?php
+            $testimonials = new WP_Query( array( 'post_type' => 'jetpack-testimonial', 'showposts' => 3, 'orderby' => 'rand' ) );
+            while( $testimonials->have_posts() ) : $testimonials->the_post();
+          ?>
+          <div>
+            <div class="testimonial testimonial-single">
+              <div class="author-box">
+                <span class="avatar">
+                  <?php
+                  if ( has_post_thumbnail() ) {
+                      the_post_thumbnail();
+                  }
+                  else {
+                      echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/assets/images/no-avatar.gif" />';
+                  }
+                  ?>
+                </span>
+              </div>
+              <div class="testimonial-holder text-center text-lg-left">
+                <blockquote>
+                  <?php the_content() ?>
+                </blockquote>
+                <div class="author-info">
+                  <h6 class="author-name"><?php the_title() ?></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; wp_reset_postdata() ?>
+        </div>
       </div>
     </div>
   </div>
@@ -19,6 +142,10 @@
 
 <section class="ig-feed">
   <div class="container">
+    <div class="page-header left-skew">
+      <a class="text-dark float-right mt-2" href="https://www.instagram.com/paneldomrd" target="_blank"><i class="fab fa-instagram"></i> @Paneldom</a>
+      <h1><?php _e('Actualizaciones Recientes') ?></h1>
+    </div>
     <?php echo do_shortcode('[elfsight_instagram_feed id="1"]') ?>
   </div>
 </section>

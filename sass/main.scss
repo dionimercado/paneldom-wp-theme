@@ -238,6 +238,11 @@ h2 {
 
     & figure {
       position: relative;
+      margin-bottom: 0;
+
+      & img {
+        transition: all .3s ease;
+      }
 
       & figcaption {
         position: absolute;
@@ -252,6 +257,12 @@ h2 {
         & a {
           color: #fff;
         }
+      }
+    }
+
+    &:hover {
+      & img {
+        transform: scale(1.2);
       }
     }
   }

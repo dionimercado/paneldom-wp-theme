@@ -382,6 +382,12 @@ h2 {
       .contact-info ul li strong {
         display: block; }
 
+.page-ventajas h2 {
+  margin-top: 2rem; }
+
+.page-ventajas p {
+  text-align: justify; }
+
 .modal-header .close {
   padding: 0;
   margin: -3rem -3rem 0rem auto;

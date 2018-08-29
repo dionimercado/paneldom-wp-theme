@@ -574,6 +574,15 @@ h2 {
   }
 }
 
+.page-ventajas {
+  & h2 {
+    margin-top: 2rem;
+  }
+  & p {
+    text-align: justify;
+  }
+}
+
 .modal-header .close {
   padding: 0;
   margin: -3rem -3rem 0rem auto;

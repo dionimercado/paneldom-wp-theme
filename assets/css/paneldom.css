@@ -6,6 +6,11 @@ body {
   background-color: #fff;
   font-size: 1.6rem; }
 
+a {
+  color: #41ae38; }
+  a:hover {
+    color: #717175; }
+
 h2 {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase; }
@@ -400,9 +405,23 @@ h2 {
   font-size: 2.5rem;
   font-weight: 300; }
 
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f9f9f9; }
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+  padding: 1rem 2rem; }
+
 .woocommerce-ordering,
 .woocommerce-result-count,
-.button.product_type_simple {
+.button.product_type_simple,
+.product_title.entry-title,
+.woocommerce ul.products li.product .button,
+.product_meta {
   display: none; }
 
 .gform_wrapper .top_label .gfield_label,

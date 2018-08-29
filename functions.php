@@ -19,7 +19,10 @@ function paneldom_theme_setup()  {
 
 	// Add theme support for Woocommerce
 	add_theme_support( 'woocommerce' );
-
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	
   // Add support for two custom navigation menus.
   register_nav_menus( array(
       'primary'   => __( 'Primary Menu', 'paneldom' ),

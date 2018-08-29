@@ -8,6 +8,15 @@ jQuery(function($) {
     items: 1
   });
 
+  jQuery(".testimonials-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    autoplay: true,
+    autoplayHoverPause:true,
+    items: 1
+  });
+
   jQuery(".portfolio-carousel").owlCarousel({
     loop:true,
     margin:20,

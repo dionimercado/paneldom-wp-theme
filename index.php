@@ -97,14 +97,14 @@ get_header();
   </div>
 </section>
 
-<section id="testimonials" class="testimonials bg-light border-top text-center">
+<section id="testimonials" class="testimonials py-5 mb-5 bg-light text-center">
   <header class="block-header">
     <h2><?php _e( 'Testimonials' ) ?></h2>
   </header>
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="owl-testimonials owl-carousel owl-theme">
+        <div class="testimonials-carousel owl-carousel owl-theme">
           <?php
             $testimonials = new WP_Query( array( 'post_type' => 'jetpack-testimonial', 'showposts' => 3, 'orderby' => 'rand' ) );
             while( $testimonials->have_posts() ) : $testimonials->the_post();
@@ -118,7 +118,7 @@ get_header();
                       the_post_thumbnail();
                   }
                   else {
-                      echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/assets/images/no-avatar.gif" />';
+                      echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/assets/images/user.png" />';
                   }
                   ?>
                 </span>

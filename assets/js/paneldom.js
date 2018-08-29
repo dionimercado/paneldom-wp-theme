@@ -12,7 +12,14 @@ jQuery(function($) {
     loop:true,
     margin:20,
     nav:false,
-    items: 4
+    responsive: {
+      0: {
+        items: 2,
+      },
+      768: {
+        items: 4,
+      }
+    }
   });
 
 });

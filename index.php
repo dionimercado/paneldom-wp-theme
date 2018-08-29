@@ -144,7 +144,7 @@ get_header();
   <div class="container">
     <div class="page-header left-skew">
       <a class="text-dark float-right mt-2" href="https://www.instagram.com/paneldomrd" target="_blank"><i class="fab fa-instagram"></i> @Paneldom</a>
-      <h1><?php _e('Actualizaciones Recientes') ?></h1>
+      <h1><?php _e('Actualizaciones <span class="d-none d-lg-inline-block">Recientes</span>') ?></h1>
     </div>
     <?php echo do_shortcode('[elfsight_instagram_feed id="1"]') ?>
   </div>

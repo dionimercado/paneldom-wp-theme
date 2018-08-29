@@ -1,4 +1,5 @@
-<footer class="footer">
+<footer class="footer <?php if(is_page('contactos')) : echo "p-0"; endif; ?>">
+  <?php if(!is_page('contactos')) : ?>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -26,16 +27,16 @@
         </div>
       </div>
     </div>
+  <?php endif; ?>
     <div class="footer-bottom">
-
       <div class="container">
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-7 text-center text-lg-left">
             <p>&copy; <?php echo date( 'Y' ) ?> <strong>Paneldom</strong>. Todos los derechos reservados.</p>
           </div>
           <div class="col-md-5">
-            <div class="social-icons text-right">
-              <span><?php _e( 'Síguenos' ) ?></span>
+            <div class="social-icons text-center text-lg-right">
+              <span class="d-none d-lg-inline-block"><?php _e( 'Síguenos' ) ?></span>
               <a href="https://www.facebook.com/paneldomrd" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a href="https://www.instagram.com/paneldomrd" target="_blank"><i class="fab fa-instagram"></i></a>
               <a href="https://www.twitter.com/paneldomrd" target="_blank"><i class="fab fa-twitter"></i></a>

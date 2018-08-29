@@ -92,6 +92,38 @@ h2 {
     }
   }
 
+  & .navbar-toggler-icon {
+    background-image: none !important;
+    background-color: #1e3160;
+    height: 0.2rem;
+    width: 2.5rem;
+    position: relative;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    &::before,
+    &::after {
+      content: "";
+      background-color: #1e3160;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: inherit;
+      -webkit-transform: rotate(0) translateX(0);
+      -ms-transform: rotate(0) translateX(0);
+      transform: rotate(0) translateX(0);
+      -webkit-transition: all 0.6s ease;
+      -o-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      bottom: -0.8rem;
+    }
+  }
+
   .navbar-nav {
     .nav-link {
       font-family: 'Oswald', sans-serif;
@@ -692,7 +724,33 @@ h2 {
   .headerNav {
     .navbar-brand img {
       height: 50px;
-      padding: 0;
+      padding: 0.6rem 1rem;
     }
+
+    & .navbar-nav .nav-link {
+      line-height: 4rem;
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .welcome-box {
+    margin-top: -2rem;
+  }
+
+  .highlights-carousel.owl-theme .owl-dots {
+    bottom: 0rem;
+    right: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer .footer-bottom {
+    text-align: center;
+  }
+  .gmap iframe{
+    height: 18rem;
+  }
+  .page-header h1 {
+    font-size: 2rem;
   }
 }

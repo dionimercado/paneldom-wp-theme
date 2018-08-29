@@ -10,16 +10,16 @@ get_header();
 <section class="section-about">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-5 col-lg-4">
         <div class="welcome-box text-dark">
           <h2>Paneldom</h2>
           <p>Somos una empresa a la vanguardia de la tecnologia, implementando nuevas técnicas y productos de construccion para que las estructuras sean mas ligeras y estructuralmente presenten un mejor comportamiento y al mismo tiempo sean más econcónomicas.</p>
           <p>La inminente llegada de nuevos procesos constructivos debido a la necesidad de reducir los costos y aumentar la calidad de las obras ha originado el nacimiento de la compañía PANELDOM.</p>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-7 col-lg-8">
         <div class="row d-none">
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about.jpg" alt="<?php bloginfo('name') ?>">
           </div>
         </div>
@@ -38,13 +38,13 @@ get_header();
             		?>
                 <div class="item">
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                       <div class="highlight-text p-5 arrow">
                         <h3><?php echo $title; ?></h3>
                         <p><?php echo $content; ?></p>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                       <div class="grid h-100 bg-white d-flex my-auto">
                         <figure class="effect-cheff">
                           <img class="img-fluid" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />

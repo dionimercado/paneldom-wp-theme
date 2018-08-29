@@ -24,7 +24,8 @@ h2 {
   text-transform: uppercase;
 }
 
-:focus {
+:focus,
+button:focus {
   outline: none;
 }
 .bg-primary {
@@ -733,10 +734,11 @@ h2 {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   body {
     padding-top: 6.4rem;
   }
+
   .headerNav {
     .navbar-brand img {
       height: 50px;
@@ -750,24 +752,10 @@ h2 {
   }
 
   .welcome-box {
-    margin-top: -2rem;
-  }
-
-  .highlights-carousel.owl-theme .owl-dots {
-    bottom: 0rem;
-    right: 0;
-    text-align: center;
-    width: 100%;
-  }
-
-  .footer .footer-bottom {
-    text-align: center;
-  }
-  .gmap iframe{
-    height: 18rem;
-  }
-  .page-header h1 {
-    font-size: 2rem;
+    margin-top: 0;
+    p {
+      font-size: 1.6rem;
+    }
   }
 
   #testimonials .author-box {
@@ -791,5 +779,34 @@ h2 {
   #testimonials .owl-dots .owl-dot:not(:last-child) {
     display: inline-block;
     margin: 0 5px; }
+
+
+  .highlights-carousel.owl-theme .owl-dots {
+    bottom: 0rem;
+    right: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+
+  .welcome-box {
+    margin-top: -2rem;
+  }
+
+
+  .footer .footer-bottom {
+    text-align: center;
+  }
+  .gmap iframe{
+    height: 18rem;
+  }
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+
 
 }

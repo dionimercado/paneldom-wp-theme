@@ -26,6 +26,9 @@ jQuery(function($) {
         items: 2,
       },
       768: {
+        items: 3,
+      },
+      992: {
         items: 4,
       }
     }
